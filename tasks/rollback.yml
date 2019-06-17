@@ -1,6 +1,6 @@
 ---
 - name: Disassociate a VPC from a DNS zone.
-  command: "aws route53 disassociate-vpc-from-hosted-zone --hosted-zone-id {{ associate_zone_id }} --vpc VPCRegion={{ associate_vpc_region }},VPCId={{ associate_vpc_id }}"
+  command: >-
+    aws-vault exec play -- aws route53 disassociate-vpc-from-hosted-zone --hosted-zone-id {{ associate_zone_id }}
+    --vpc VPCRegion={{ associate_vpc_region }},VPCId={{ associate_vpc_id }}
   changed_when: False
-  tags:
-    - skip_ansible_lint
