@@ -1,4 +1,4 @@
-# Role-name
+# route53-associate-zone
 
 Associate a private Route53 Zone across accounts.
 
