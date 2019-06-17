@@ -3,13 +3,19 @@
 - name: Create the VPC authorization association.
   command: "aws route53 create-vpc-association-authorization --hosted-zone-id {{ associate_zone_id }} --vpc VPCRegion={{ associate_vpc_region }},VPCId={{ associate_vpc_id }}"
   changed_when: False
+  tags:
+    - skip_ansible_lint
 
 # Should be performed in the account with the VPC
 - name: Associate the VPC to the zone.
   command: "aws route53 associate-vpc-with-hosted-zone --hosted-zone-id {{ associate_zone_id }} --vpc VPCRegion={{ associate_vpc_region }},VPCId={{ associate_vpc_id }}"
   changed_when: False
+  tags:
+   - skip_ansible_lint
 
 # Should be perfomed in the account with DNS Zone
 - name: Delete the VPC authorization association.
   command: "aws route53 delete-vpc-association-authorization --hosted-zone-id {{ associate_zone_id }} --vpc VPCRegion={{ associate_vpc_region }},VPCId={{ associate_vpc_id }}"
   changed_when: False
+  tags:
+    - skip_ansible_lint
