@@ -1,0 +1,19 @@
+galaxy_info:
+  author: Maish Saidel-Keesing
+  description: Associate (or disassociate) a Route53 zone to VPC in another AWS account
+  license: license (BSD)
+  role_name: aws-route53-zone
+  min_ansible_version: 2.4
+  platforms:
+  - name: EL
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+  galaxy_tags:
+    - aws
+    - role
+    - route53
+    - associate
+    - zone
